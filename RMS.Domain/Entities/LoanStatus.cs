@@ -8,7 +8,6 @@ namespace RMS.Domain.Entities
 {
     public  enum LoanStatus
     {
-        UnderRepair, Conditional
-
+        UnderRepair, Conditional, Retired
     }
 }

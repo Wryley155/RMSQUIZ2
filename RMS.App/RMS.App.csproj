@@ -16,4 +16,10 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\RMS.Domain\RMS.Domain.csproj" />
+    <ProjectReference Include="..\RMS.Infrastructure\RMS.Infrastructure.csproj" />
+    <ProjectReference Include="..\RMS.Services\RMS.Services.csproj" />
+  </ItemGroup>
+
 </Project>

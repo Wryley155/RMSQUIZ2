@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="NewFolder\" />
+    <ProjectReference Include="..\RMS.Domain\RMS.Domain.csproj" />
   </ItemGroup>
 
 </Project>

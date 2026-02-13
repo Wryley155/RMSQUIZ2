@@ -1,17 +1,25 @@
+using Microsoft.EntityFrameworkCore;
+using RMS.Infrastructure;
+using System;
+using System.Windows.Forms;
+
 namespace RMS.App
 {
     internal static class Program
     {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+            var connectionString = "Server=(localdb)\\mssqllocaldb;Database=RMS_DB;Trusted_Connection=True;";
+            var optionsBuilder = new DbContextOptionsBuilder<RmsDBContext>();
+            optionsBuilder.UseSqlServer(connectionString);
+            using (var context = new RmsDBContext(optionsBuilder.Options))
+            {
+             
+                context.Database.EnsureCreated();
+                Application.Run(new MainForm());
+            }
         }
     }
 }
